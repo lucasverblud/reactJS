@@ -3,8 +3,8 @@ import CartWidget from "../CartWidget/CartWidget";
 import {Navbar, Nav, Container} from "react-bootstrap"
 import logo from "./logo.png"
 
-const NavBar = ({ data }) => {
-    return (
+export default function NavBar({ data }){
+    return(
         <>
             <Navbar bg="light" expand="lg">
                 <Container>
@@ -18,13 +18,11 @@ const NavBar = ({ data }) => {
                                 </Nav.Link>
                             })}
                         </Nav>
-                    </Navbar.Collapse>                  
+
+                    </Navbar.Collapse>             
                 </Container>
                 <CartWidget/>
-            </Navbar>
-            
+            </Navbar>          
         </>
-    )
+    );
 }
-
-export default NavBar
