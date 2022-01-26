@@ -1,6 +1,7 @@
 import react from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { Card } from "react-bootstrap"
+import { Link } from 'react-router-dom';
 
 export default function Item({ id,name,price,src,stock,ini }) {
 
