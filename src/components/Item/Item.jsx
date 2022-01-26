@@ -1,9 +1,9 @@
 import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
-import { Card } from "react-bootstrap"
+import { Card, Button } from "react-bootstrap"
 import { Link } from 'react-router-dom';
 
-export default function Item({ id,name,price,src,stock,ini }) {
+export default function Item({ id, name, price, src, stock, ini }) {
 
     return (
         <>
@@ -13,6 +13,9 @@ export default function Item({ id,name,price,src,stock,ini }) {
                     <Card.Title>{id}{name}{price}{src}</Card.Title>
                     <Card.Text>
                         <ItemCount tope={stock} ini={ini} />
+                        <Button variant="outline-secondary">
+                            <Link to={`/item/${id}`}>Ver</Link>
+                        </Button>{' '}
                     </Card.Text>
                 </Card.Body>
             </Card>
