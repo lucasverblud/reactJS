@@ -28,6 +28,7 @@ export default function ItemDetailContainer() {
         <>
             {itemId}
             <ItemDetail producto={producto} />
+            {/* <Link to={"/item/002"}>ir al item 2</Link> */}
         </>
     );
 }

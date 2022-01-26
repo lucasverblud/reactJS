@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { Card } from "react-bootstrap"
 import { Link } from 'react-router-dom';

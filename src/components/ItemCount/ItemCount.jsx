@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import React, {useState} from "react";
 import { Button } from "react-bootstrap"
 import { Link } from 'react-router-dom';
 
@@ -24,10 +24,8 @@ export default function ItemCount({ tope, ini }) {
             <Button variant="outline-secondary" onClick={() => restar()}>-</Button>{' '}
             {cantidad}
             <Button variant="outline-secondary" onClick={() => sumar()}>+</Button>{' '}
-            <br />
             <Button variant="secondary" onClick={() => onAdd()}>AGREGAR</Button>
-            <br />
-            <br />
+
         </>
     )
 
