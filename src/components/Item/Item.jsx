@@ -8,9 +8,9 @@ export default function Item({ id, name, price, src, stock, ini }) {
     return (
         <>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={src} />
                 <Card.Body>
-                    <Card.Title>{id}{name}{price}{src}</Card.Title>
+                    <Card.Title>{id}{name}{price}</Card.Title>
                     <Card.Text>
                         <ItemCount tope={stock} ini={ini} />
                         <Button variant="outline-secondary">
