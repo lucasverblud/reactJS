@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Switch, Route, useParams, Link } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 
@@ -17,9 +17,7 @@ export default function ItemDetailContainer() {
                 { id: '003', title: 'Hoodie1', price: 70, pictureUrl: "https://d22fxaf9t8d39k.cloudfront.net/9714f9d574809aeccf1fb2d0e1ec98a5ac02f888b01977398ee42f6bbb477de866621.jpeg", stock: 5, initial: 1, cagetoria: 'hoodie' }
             ];
 
-            listadoDeProductos = listadoDeProductos.filter(item => item.id === itemId);
-
-            let myProducto = listadoDeProductos[0];
+            const myProducto = listadoDeProductos.find(item => item.id === itemId);
 
             setProducto(myProducto);
 
@@ -27,8 +25,7 @@ export default function ItemDetailContainer() {
     }, [itemId])
 
     return (
-        <>
-            {itemId}
+        <>         
             <ItemDetail producto={producto} />
             {/* <Link to={"/item/002"}>ir al item 2</Link> */}
         </>

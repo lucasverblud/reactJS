@@ -12,13 +12,13 @@ function App() {
        <NavBar />
        <Switch>
 
-         <Route exact path="/">
+          <Route path="/">
            <ItemListContainer />
          </Route>
 
          <Route path="/categoria/:categoriaId">
-           <ItemDetailContainer />
-         </Route>
+           <ItemListContainer />
+         </Route> 
 
          <Route path="/item/:itemId">
            <ItemDetailContainer />
