@@ -49,7 +49,7 @@ export default function ItemListContainer() {
                     Loading...
                 </>
                 :
-                <ItemList products={items} />
+                <ItemList items={items} />
             }
 
         </>
