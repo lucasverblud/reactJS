@@ -12,7 +12,7 @@ function App() {
        <NavBar />
        <Switch>
 
-          <Route path="/">
+          <Route exact path="/">
            <ItemListContainer />
          </Route>
 
