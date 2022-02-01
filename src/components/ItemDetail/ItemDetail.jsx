@@ -1,9 +1,18 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap"
+import React, { useState } from "react";
+import { Container, Row, Col,Button } from "react-bootstrap"
 import ItemCount from "../ItemCount/ItemCount";
+import { Link } from 'react-router-dom';
 
 
 export default function ItemDetail({ producto }) {
+
+    const [mostrarItemCount, setMostrarItemCount] = useState(true);
+
+    function onAdd(cantidad) {
+        //alert(cantidad);
+        setMostrarItemCount(false);
+    }
+
 
     return (
         <>
@@ -15,7 +24,14 @@ export default function ItemDetail({ producto }) {
                         <p className="lead text-secondary text-uppercase">{producto.categoria}</p>
                         <img alt='img' src={producto.pictureUrl} />
                         <p className="lead"><span className="fw-bold">Precio: $ </span>{producto.price}</p>
-                        <ItemCount tope={producto.stock} ini={producto.initial} />
+                        {
+                            (mostrarItemCount) ?
+                                <ItemCount tope={producto.stock} ini={producto.initial} onAdd={onAdd} />
+                                :
+                                <Button variant="warning">
+                                    <Link to={`/cart`}>Finalizar compra</Link>
+                                </Button>
+                        }
                     </Col>
                 </Row>
             </Container>

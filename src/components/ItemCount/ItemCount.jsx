@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap"
 
-export default function ItemCount({ tope, ini }) {
+export default function ItemCount({ tope, ini, onAdd }) {
 
     const [cantidad, setCantidad] = useState(ini);
 
@@ -14,16 +14,13 @@ export default function ItemCount({ tope, ini }) {
         if (cantidad > ini) setCantidad(cantidad - 1)
     }
 
-    function onAdd() {
-        alert(cantidad);
-    }
 
     return (
         <>
             <Button variant="outline-secondary" onClick={() => restar()}>-</Button>{' '}
             {cantidad}
             <Button variant="outline-secondary" onClick={() => sumar()}>+</Button>{' '}
-            <Button variant="secondary" onClick={() => onAdd()}>AGREGAR</Button>
+            <Button variant="secondary" onClick={() => onAdd(cantidad)}>AGREGAR</Button>
 
         </>
     )
