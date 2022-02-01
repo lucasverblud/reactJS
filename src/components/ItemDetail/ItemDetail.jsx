@@ -28,7 +28,7 @@ export default function ItemDetail({ producto }) {
                             (mostrarItemCount) ?
                                 <ItemCount tope={producto.stock} ini={producto.initial} onAdd={onAdd} />
                                 :
-                                <Button variant="warning">
+                                <Button variant="secondary">
                                     <Link to={`/cart`}>Finalizar compra</Link>
                                 </Button>
                         }
