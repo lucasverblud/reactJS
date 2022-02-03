@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import ItemDetail from "../ItemDetail/ItemDetail";
+import Loader from "../Loader";
 
 
 export default function ItemDetailContainer() {
 
+
+
     const { itemId } = useParams();
     const [Loading, setLoading] = useState(false);
-    const [producto, setProducto] = useState({});
+    const [producto, setProducto] = useState([]);
 
     const productos = [
         { id: '001', title: 'Remera1', price: 100, pictureUrl: "https://d22fxaf9t8d39k.cloudfront.net/6da0a68dbed7261cde30c9aa72c5483fcc40fe18c207a659d9140afc481ab8fb66621.jpeg", stock: 5, initial: 1, categoria: 'remera' },
@@ -16,6 +19,7 @@ export default function ItemDetailContainer() {
     ];
 
     useEffect(() => {
+        setLoading(true);
         const productosEnStock = new Promise((resolve, reject) => {
             setTimeout(() => {
                 //reject('server caido');
@@ -24,8 +28,6 @@ export default function ItemDetailContainer() {
         });
         productosEnStock
             .then(res => {
-
-                setLoading(true);
                 setProducto(res.find(item => item.id === itemId))
 
             })
@@ -40,13 +42,7 @@ export default function ItemDetailContainer() {
     return (
 
         <>
-            {(Loading) ?
-                <>
-                    Loading...
-                </>
-                :
-                <ItemDetail producto={producto} />
-            }
+            {Loading ? <Loader /> : <ItemDetail producto={producto} />}
 
         </>
     )

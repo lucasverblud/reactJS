@@ -2,15 +2,19 @@ import React, { useState } from "react";
 import { Container, Row, Col,Button } from "react-bootstrap"
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from 'react-router-dom';
+import { contexto } from "../CartContext/CartContext";
 
 
 export default function ItemDetail({ producto }) {
+
+    const { addItem } = useContext(contexto);
 
     const [mostrarItemCount, setMostrarItemCount] = useState(true);
 
     function onAdd(cantidad) {
         //alert(cantidad);
         setMostrarItemCount(false);
+        addItem(producto, cantidad);
     }
 
 
