@@ -6,7 +6,7 @@ export default function CartWidget (){
     return (
         <div>
             <img src={carrito} alt="" />
-            <p>4</p>
+            <span className='badge'>0</span>
         </div>
     );
 }

@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from 'react-router-dom';
 import ItemDetail from "../ItemDetail/ItemDetail";
 import Loader from "../Loader";
+import { contexto } from '../CartContext/CartContext';
 
 
 export default function ItemDetailContainer() {
 
-
+    const { addItem } = useContext(contexto);
 
     const { itemId } = useParams();
     const [Loading, setLoading] = useState(false);
     const [producto, setProducto] = useState([]);
+    const [added, setAdded] = useState(false);
 
     const productos = [
         { id: '001', title: 'Remera1', price: 100, pictureUrl: "https://d22fxaf9t8d39k.cloudfront.net/6da0a68dbed7261cde30c9aa72c5483fcc40fe18c207a659d9140afc481ab8fb66621.jpeg", stock: 5, initial: 1, categoria: 'remera' },
@@ -39,10 +41,16 @@ export default function ItemDetailContainer() {
             });
     }, [itemId])
 
+    const onAdd = (cantidad) => {
+        console.log(`Agregaste ${producto.title}, cantidad: ${cantidad}.`);
+        addItem(producto, cantidad);
+        setAdded(true); // seteo en tru cuando es agregado el producto
+      }
+
     return (
 
         <>
-            {Loading ? <Loader /> : <ItemDetail producto={producto} />}
+            {Loading ? <Loader /> : <ItemDetail onAdd={onAdd} producto={producto} added={added} />}
 
         </>
     )

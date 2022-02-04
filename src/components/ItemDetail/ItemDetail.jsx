@@ -1,22 +1,10 @@
-import React, { useState } from "react";
-import { Container, Row, Col,Button } from "react-bootstrap"
+import React from "react";
+import { Container, Row, Col, Button } from "react-bootstrap"
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from 'react-router-dom';
-import { contexto } from "../CartContext/CartContext";
 
 
-export default function ItemDetail({ producto }) {
-
-    const { addItem } = useContext(contexto);
-
-    const [mostrarItemCount, setMostrarItemCount] = useState(true);
-
-    function onAdd(cantidad) {
-        //alert(cantidad);
-        setMostrarItemCount(false);
-        addItem(producto, cantidad);
-    }
-
+export default function ItemDetail({ producto, onAdd, addItem }) {
 
     return (
         <>
@@ -29,12 +17,14 @@ export default function ItemDetail({ producto }) {
                         <img alt='img' src={producto.pictureUrl} />
                         <p className="lead"><span className="fw-bold">Precio: $ </span>{producto.price}</p>
                         {
-                            (mostrarItemCount) ?
-                                <ItemCount tope={producto.stock} ini={producto.initial} onAdd={onAdd} />
-                                :
+                            addItem ?
+
                                 <Button variant="secondary">
                                     <Link to={`/cart`}>Finalizar compra</Link>
                                 </Button>
+                                :
+                                <ItemCount tope={producto.stock} ini={producto.initial} onAdd={onAdd} />
+
                         }
                     </Col>
                 </Row>
