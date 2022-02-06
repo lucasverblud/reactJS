@@ -4,8 +4,9 @@ import ItemCount from "../ItemCount/ItemCount";
 import { Link } from 'react-router-dom';
 
 
-export default function ItemDetail({ producto, onAdd, addItem }) {
+export default function ItemDetail({ producto, onAdd, added }) {
 
+  
     return (
         <>
 
@@ -17,7 +18,7 @@ export default function ItemDetail({ producto, onAdd, addItem }) {
                         <img alt='img' src={producto.pictureUrl} />
                         <p className="lead"><span className="fw-bold">Precio: $ </span>{producto.price}</p>
                         {
-                            addItem ?
+                            added ?
 
                                 <Button variant="secondary">
                                     <Link to={`/cart`}>Finalizar compra</Link>

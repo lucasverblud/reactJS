@@ -18,7 +18,7 @@ export default function ItemCount({ tope, ini, onAdd }) {
     return (
         <>
             <Button variant="outline-secondary" onClick={() => restar()}>-</Button>{' '}
-            {cantidad}
+            <b>{cantidad}</b>
             <Button variant="outline-secondary" onClick={() => sumar()}>+</Button>{' '}
             <Button variant="secondary" onClick={() => onAdd(cantidad)}>AGREGAR</Button>
 
