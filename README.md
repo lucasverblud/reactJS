@@ -1,1 +1,1 @@
-Esta es mi eccomerce realizada en React js!!
+Mi primera tienda onlinea, realizada en React js!!
