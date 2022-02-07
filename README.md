@@ -1,1 +1,1 @@
-Mi primera tienda onlinea, realizada en React js!!
+Mi primera tienda online, realizada en React js!!
