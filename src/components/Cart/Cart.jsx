@@ -19,7 +19,7 @@ const Cart = () => {
     <>
       {cart.length === 0 ?
         <div>
-          <p>Empty Cart</p>
+          <p>No existen productos agregados!</p>
           <Link to='/'>Ir al Inicio</Link>
         </div>
         :
