@@ -7,14 +7,12 @@ import { useEffect } from "react";
 
 const Cart = () => {
 
-  const { cart, clear, sumarTodo, sumarCantidad } = useContext(contexto);
+  const { cart, clear, sumarTodo } = useContext(contexto);
 
   const [total, setTotal] = useState(0);
-  const [cantidadTotal, setCantidadTotal] = useState(0);
 
   useEffect(() => {
     setTotal(sumarTodo());
-    setCantidadTotal(sumarCantidad());
   }, [])
 
   return (
@@ -22,7 +20,7 @@ const Cart = () => {
       {cart.length === 0 ?
         <div>
           <p>Empty Cart</p>
-          <Link to='/'>Go to shop!</Link>
+          <Link to='/'>Ir al Inicio</Link>
         </div>
         :
         <div>
