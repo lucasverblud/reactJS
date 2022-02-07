@@ -1,12 +1,12 @@
 import React from "react";
 import carrito from "./carrito.png";
+import { Link } from "react-router-dom";
 
 
 export default function CartWidget (){
     return (
         <div>
-            <img src={carrito} alt="" />
-            <span >0</span>
+            <Link to={`/cart/`}><img src={carrito}/></Link>
         </div>
     );
 }
