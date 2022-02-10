@@ -27,13 +27,13 @@ export default function NavBar() {
                             <NavLink className='me-2' to="/">
                                 Inicio
                             </NavLink>
-                            <NavLink className='me-2' to="/categoria/remera">
+                            <NavLink className='me-2' to="/categoria/remeras">
                                 Remeras
                             </NavLink>
-                            <NavLink className='me-2' to="/categoria/buzo">
+                            <NavLink className='me-2' to="/categoria/buzos">
                                 Buzos
                             </NavLink>
-                            <NavLink className='me-2' to="/categoria/hoodie">
+                            <NavLink className='me-2' to="/categoria/hoodies">
                                 Hoodies
                             </NavLink>
                         </Nav>
