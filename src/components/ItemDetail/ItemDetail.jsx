@@ -14,8 +14,8 @@ export default function ItemDetail({ producto, onAdd, added }) {
                 <Row className="d-flex justify-content-center">
                     <Col className="contenedorProdInv text-center col-md-6">
                         <p className="fs-4 text-primary">{producto.title}</p>
-                        <p className="lead text-secondary text-uppercase">{producto.categoria}</p>
-                        <img alt='img' src={producto.pictureUrl} />
+                        <p className="lead text-secondary text-uppercase">{producto.description}</p>
+                        <img alt='img' src={producto.imageId} />
                         <p className="lead"><span className="fw-bold">Precio: $ </span>{producto.price}</p>
                         {
                             added ?
