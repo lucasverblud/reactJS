@@ -25,13 +25,12 @@ const CartContext = ({ children }) => {
 
     const sumarTodo = () => {
 
-        return (cart.length > 0) ? cart.map((item) => item.item.price * item.cantidad).reduce((a, b) => a + b) : 0
-        
+        return cart.reduce((a, b) => a + (b.item.price * b.cantidad), 0)
+
     }
 
     const sumarCantidad = () => {
-        return (cart.length > 0) ? cart.map((item) => item.cantidad).reduce((a, b) => a + b) : 0
-        // return cart.reduce((a, b) => a.cantidad + b.cantidad)
+        return cart.reduce((a, b) => a + b.cantidad, 0)
     }
 
     const clear = () => {
