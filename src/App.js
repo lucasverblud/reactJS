@@ -6,6 +6,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import React from "react";
 import Cart from './components/Cart/Cart';
 import CartContext from './components/CartContext/CartContext';
+import Checkout from './components/Checkout/Checkout';
 
 function App() {
   return (
@@ -29,6 +30,10 @@ function App() {
 
             <Route path="/cart">
               <Cart />
+            </Route>
+
+            <Route path="/checkout/">
+              <Checkout />
             </Route>
 
           </Switch>
