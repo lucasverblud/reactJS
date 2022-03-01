@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export default function ItemDetail({ producto, onAdd, added }) {
 
-  
+
     return (
         <>
 
@@ -20,9 +20,12 @@ export default function ItemDetail({ producto, onAdd, added }) {
                         {
                             added ?
 
-                                <Button variant="secondary">
-                                    <Link to={`/cart`}>Finalizar compra</Link>
-                                </Button>
+                                <Link to={`/cart`}>
+                                    <Button variant="secondary">
+                                        Finalizar Compra
+                                    </Button>
+                                </Link>
+
                                 :
                                 <ItemCount tope={producto.stock} ini={producto.initial} onAdd={onAdd} />
 

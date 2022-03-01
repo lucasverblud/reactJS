@@ -7,21 +7,17 @@ import { Button } from "react-bootstrap"
 
 export default function CartWidget() {
     const { sumarCantidad } = useContext(contexto);
-    // const [cantidadTotal, setCantidadTotal] = useState(0);
-
-    // useEffect(() => {
-    //     setCantidadTotal(sumarCantidad());
-    // })
 
     return (
         <div>
-            <Button variant="outline-secondary">
-                <Link to={`/cart/`}><img src={carrito} />
+            <Link to={`/cart/`}>
+                <Button variant="outline-secondary">
+                    <img src={carrito} alt=""/>
                     {
                         (sumarCantidad())
                     }
-                </Link>
-            </Button>{' '}
+                </Button>{' '}
+            </Link>
         </div>
     );
 }

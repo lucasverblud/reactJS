@@ -20,7 +20,7 @@ export default function ItemListContainer() {
                 .then((querySnapShot) => {
 
                     setLoading(true);
-                    if (querySnapShot.size == 0) {
+                    if (querySnapShot.size === 0) {
                         console.log('no hay documentos con en ese query');
                         return
                     }
@@ -43,7 +43,7 @@ export default function ItemListContainer() {
                 .then((querySnapShot) => {
 
                     setLoading(true);
-                    if (querySnapShot.size == 0) {
+                    if (querySnapShot.size === 0) {
                         console.log('no hay documentos con en ese query');
                         return
                     }

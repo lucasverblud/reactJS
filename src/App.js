@@ -7,6 +7,7 @@ import React from "react";
 import Cart from './components/Cart/Cart';
 import CartContext from './components/CartContext/CartContext';
 import Checkout from './components/Checkout/Checkout';
+import FooterPage from './components/FooterPage/FooterPage';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           </Switch>
         </BrowserRouter>
       </CartContext>
+      <FooterPage/>
     </>
   )
 }

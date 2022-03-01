@@ -46,7 +46,7 @@ export default function ItemDetailContainer() {
         console.log(`Agregaste ${producto.title}, cantidad: ${cantidad}.`);
         addItem(producto, cantidad);
         setAdded(true); // seteo en true cuando es agregado el producto
-      }
+    }
 
     return (
 
